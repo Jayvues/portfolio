@@ -1,0 +1,174 @@
+<!-- Code by JAY -->
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bills javascript game with bootstrap and css">
+    <meta name="author" content="JAY">
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+    <title>JS - BILL's Game | JAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="CSS/Bill-Style.css">
+    <script>
+    </script>
+    <style>
+        body {
+            background-image: url("Images/Game-BG.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin-top: 10px;
+            margin-left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ac-wrapper">
+        <div id="popup">
+            <table border="0" cellspacing="3" cellpadding="3" style="border-collapse: collapse">
+                <tr>
+                    <td bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF" background="Images/Popup_BG.png">
+                        <center>
+                            <h2>
+                                <font color="#FFFFFF">
+                                    <span style="text-decoration:underline"><strong>Instruction de jeu</strong></span></font>
+                            </h2>
+                            <h5>
+                                <font color="#FF6600"><strong><em>Il y a deux tables distinctes de 6 billes chacune.</em></strong></font>
+                            </h5>
+                            <p>
+                                <font color="#FFFFFF">Les joueurs peuvent prendre 1 ou 2 ou 3 billes &agrave; leur guise.<br />Mais si le joueur 1 a pris 2 billes, le joueur 2 doit prendre 1 ou trois billes.</font>
+                            </p>
+                            <h5 style="margin-top: -1px">
+                                <font color="#FF6600"><em><strong>A votre tour !</strong></em></font>
+                            </h5>
+                            <p style="margin-top: -3px">
+                                <font color="#FFFFFF">Cliquez sur le bouton "PLAY" pour commencer votre tour.<br />Cliquez sur le bouton "EXIT" pour terminer votre tour.<br /> Le joueur qui est parti pour retirer la billes finale du tableau a perd!<br>
+                                </font>
+                                <font color="#FF6600">
+                                    <em><strong> Jouer au jeu, vous devez enregistrer votre nom ou pr&eacute;nom !</strong></em></font>
+                            </p>
+                            <p>
+                                <font color="#FFFFFF"><input id="p1" type="text" value="Joueur 1" /></font>
+                                <font color="#FFFFFF"> <input id="p2" type="text" value="Joueur 2" /></font>
+                            </p>
+                            <p><input name="submit" type="submit" value="JOUER !" onClick="popUp()" /></p>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+    <div class="container-fluid">
+        <div class="table-responsive">
+            <table>
+                <tbody class="table">
+                    <tr>
+                        <td>
+                            <ul id="marble">
+                                <li id="img1"><img width="50" src="Images/B-ball_1.png" /></li>
+                                <li id="img2"><img width="50" src="Images/B-ball_2.png" /></li>
+                                <li id="img3"><img width="50" src="Images/B-ball_3.png" /></li>
+                                <li id="img4"><img width="50" src="Images/B-ball_4.png" /></li>
+                                <li id="img5"><img width="50" src="Images/B-ball_5.png" /></li>
+                                <li id="img6"><img width="50" src="Images/B-ball_6.png" /></li>
+                            </ul>
+                            <ul id="marble">
+                                <li id="img7"><img width="50" src="Images/B-ball_7.png" /></li>
+                                <li id="img8"><img width="50" src="Images/B-ball_8.png" /></li>
+                                <li id="img9"><img width="50" src="Images/B-ball_9.png" /></li>
+                                <li id="img10"><img width="50" src="Images/B-ball_10.png" /></li>
+                                <li id="img11"><img width="50" src="Images/B-ball_11.png" /></li>
+                                <li id="img12"><img width="50" src="Images/B-ball_12.png" /></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="width: 100%;">
+                <tbody>
+                    <tr>
+                        <td style="text-align: center; vertical-align: middle; width: 12%;"></td>
+                        <td id="tdalign" style="text-align: center; vertical-align: middle; width: 25%;">
+                            <p id="player1" style="text-align: center;">
+                                <button class="ball1" value="1" id="b1" onclick="setidElement1()"> <img src="Images/B-ball.png" width="30" /></button>
+                            </p>
+                            <p style="text-align: center;">
+                                <button class="ball1" value="1" id="b2" onclick="setidElement2()"> <img src="Images/B-ball.png" width="30" /></button>
+                                <button class="ball1" value="1" id="b3" onclick="setidElement3()"> <img src="Images/B-ball.png" width="30" /></button>
+                            </p>
+                            <p style="text-align: center;">
+                                <button class="ball1" value="1" id="b4" onclick="setidElement4()"> <img src="Images/B-ball.png" width="30" /></button>
+                                <button class="ball1" value="1" id="b5" onclick="setidElement5()"> <img src="Images/B-ball.png" width="30" /></button>
+                                <button class="ball1" value="1" id="b6" onclick="setidElement6()"> <img src="Images/B-ball.png" width="30" /></button>
+                            </p>
+                            <button id="b14" onclick="setidElement14()"> <img src="Images/P-B-Start.png" alt="START Player 1" width="81" /></button>
+                            <button id="b16" onclick="setidElement16()"><img src="Images/P-B-Stop.png" alt="STOP Playing" width="81" /></button>
+                            <div id="welcomeplayer1" style="text-align: center;">Nom de joueur
+                                <h5 id="player1nbr"></h5>
+                            </div>
+                        </td>
+                        <td style="text-align: center; width: 25%;">
+                            <table id="scoreboard" style="width: 100%; margin-left: 0px; margin-right: auto;">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            <div class="score1">
+                                                <h5 id="1"></h5>
+                                                <h6 id="player1nbr">Billes Utilisé</h6>
+                                            </div>
+                                        </td>
+                                        <td style="width: 50%;">
+                                            <div class="score2">
+                                                <h5 id="2"></h5>
+                                                <h5 id="1"></h5>
+                                                <h6 id="player2nbr">Billes Utilisé</h6>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p align="center"><button onclick="playAgain()"><img src="Images/Play_Again.png" alt="Play Again!"></button></p>
+                        </td>
+                        <td id="tdalign" style="text-align: center; vertical-align: middle; width: 25%;">
+                            <p style="text-align: center;">
+                                <button class="ball1" value="1" id="b7" onclick="setidElement7()"> <img src="Images/B-ball.png" width="30" /></button>
+                            </p>
+                            <p style="text-align: center;">
+                                <button class="ball1" value="1" id="b8" onclick="setidElement8()"> <img src="Images/B-ball.png" width="30" /></button>
+                                <button class="ball1" value="1" id="b9" onclick="setidElement9()"> <img src="Images/B-ball.png" width="30" /></button>
+                            </p>
+                            <p style="text-align: center;">
+                                <button class="ball1" value="1" id="b10" onclick="setidElement10()"> <img src="Images/B-ball.png" width="30" /></button>
+                                <button class="ball1" value="1" id="b11" onclick="setidElement11()"> <img src="Images/B-ball.png" width="30" /></button>
+                                <button class="ball1" value="1" id="b12" onclick="setidElement12()"> <img src="Images/B-ball.png" width="30" /></button>
+                            </p>
+                            <button id="b15" onclick="setidElement15()"><img src="Images/P-B-Start.png" alt="START Player 2" width="81" /></button>
+                            <button id="b17" onclick="setidElement17()"><img src="Images/P-B-Stop.png" alt="STOP Playing" width="81" /></button>
+                            <div id="welcomeplayer2" style="text-align: center;">Nom de joueur
+                                <h5 id="player1nbr"></h5>
+                            </div>
+                        </td>
+                        <td style="width: 55%; text-align: center; vertical-align: middle;"></td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+    <script src="JS/Bill-Script.js">
+    </script>
+</body>
+
+</html>
