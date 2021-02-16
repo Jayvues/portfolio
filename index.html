@@ -319,17 +319,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                        <div class="portfolio-wrap">
-                            <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                            <div class="portfolio-info">
-                                <h4>Spécial</h4>
-                                <div class="portfolio-links">
-                                    <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Spécial"><i class="bx bx-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="col-lg-4 col-md-6 portfolio-item filter-card">
                         <div class="portfolio-wrap">
                             <img src="assets/img/portfolio/CY_Stage_01.jpg" class="img-fluid" alt="">
@@ -472,23 +461,24 @@
                         </div>
                     </div>
                     <div class="col-lg-8 mt-5 mt-lg-0">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form id="contact-form" method="post" role="form" class="php-email-form">
+                            <input type="hidden" name="contact_number">
                             <div class="row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Votre Nom" data-rule="minlen:4" data-msg="Veuillez saisir au moins 4 caractères" />
+                                    <input type="text" name="user_name" class="form-control" id="name" placeholder="Votre Nom" data-rule="minlen:4" data-msg="Veuillez saisir au moins 4 caractères" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Votre E-mail" data-rule="email" data-msg="Veuillez saisir un e-mail valide" />
+                                    <input type="email" class="form-control" name="user_email" id="email" placeholder="Votre E-mail" data-rule="email" data-msg="Veuillez saisir un e-mail valide" />
                                     <div class="validate"></div>
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Veuillez saisir au moins 8 caractères de sujet" />
+                                <input type="text" class="form-control" name="user_subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Veuillez saisir au moins 8 caractères de sujet" />
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="S'il vous plaît écrivez quelque chose pour moi" placeholder="Matière"></textarea>
+                                <textarea class="form-control" name="user_message" rows="5" data-rule="required" data-msg="S'il vous plaît écrivez quelque chose pour moi" placeholder="Matière"></textarea>
                                 <div class="validate"></div>
                             </div>
                             <div class="mb-3">
@@ -501,8 +491,26 @@
                     </div>
                 </div>
             </div>
+            <script type="text/javascript">
+                (function() {
+                    emailjs.init('service_skz54qm');
+                })();
+            </script>
+            <script type="text/javascript">
+                window.onload = function() {
+                    document.getElementById('contact-form').addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        this.contact_number.value = Math.random() * 100000 | 0;
+                        emailjs.sendForm('contact_service', 'contact_form', this)
+                            .then(function() {
+                                console.log('SUCCESS!');
+                            }, function(error) {
+                                console.log('FAILED...', error);
+                            });
+                    });
+                }
+            </script>
         </section>
-    </main>
     <footer id="footer">
         <div class="container">
             <h1>Merci d'avoir visiter mon site !</h1>
