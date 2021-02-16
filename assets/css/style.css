@@ -1062,7 +1062,7 @@ section {
 }
 
 .contact .info h4 {
-    padding: 0 0 0 60px;
+    /* padding: 0 0 0 60px; */
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 5px;
@@ -1070,7 +1070,7 @@ section {
 }
 
 .contact .info p {
-    padding: 0 0 0 60px;
+    /* padding: 0 0 0 60px; */
     margin-bottom: 0;
     font-size: 14px;
     color: #728394;
