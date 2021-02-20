@@ -10,8 +10,8 @@
     <meta content="JAY" name="author">
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <scrip ttype="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
-        </script>
+   <link rel="stylesheet" type="text/css" href="assets/css//purecookie.css" async />
+   <script src="assets/js//purecookie.js" async></script></script>
         <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet'>
         <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
@@ -43,14 +43,17 @@
             <h1>Jay</h1>
             <p id="ani">Je suis <span class="typed" data-typed-items="Développeur Web et Web Mobile, Designer, Graphiste, Audio and Vidéo Créateur, Freelance, Photographe etc.,"></span></p>
             <div class="social-links">
-                <a href="https://www.twitter.com/jayvues/" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="https://www.facebook.com/jayvues/" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="https://www.instagram.com/jayvues/" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/jayvues/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://www.twitter.com/jayvues/" target="popup" onclick="window.open('https://www.twitter.com/jayvues/','popup','width=600,height=600'); return false;" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.facebook.com/jayvues/" target="popup" onclick="window.open('https://www.facebook.com/jayvues/','popup','width=600,height=600'); return false;" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/jayvues/" target="popup" onclick="window.open('https://www.instagram.com/jayvues/','popup','width=600,height=600'); return false;" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/jayvues/" target="popup" onclick="window.open('https://www.linkedin.com/jayvues/','popup','width=600,height=600'); return false;" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
         </div>
+
     </section>
+
     <main id="main">
+<div style="width:100%;text-align:center;margin-top:calc(10% + 30px);">
         <section id="about" class="about">
             <div class="container" data-aos=i d="about" class="about" "fade-up">
 
@@ -452,7 +455,7 @@
                             <div class="email">
                                 <i class="icofont-envelope"></i>
                                 <h4>E-mail:</h4>
-                                <p>tvkmr@outlook.fr</p>
+                                <p>jayvuesmoi@outlook.fr</p>
                             </div>
                             <div class="phone">
                                 <i class="icofont-phone"></i>
@@ -489,73 +492,19 @@
                             <div class="text-center"><button type="submit">Envoyer le Message</button></div>
                         </form>
                     </div>
+                    <small>If the mail servers is not working, kindly send mail to <<< "jayvuesmoi@outlook.fr" >>></small>
                 </div>
             </div>
-            <div>
-                <style>
-                    form>input,
-                    form>textarea,
-                    form>label {
-                        display: block;
-                        margin-bottom: 5px;
-                    }
-                </style>
 
-                <form name="contact" method="post">
-                    <label>Name</label>
-                    <input type="text" name="name" />
-                    <label>Subject</label>
-                    <input type="text" name="subject" />
-                    <label>Phone Number</label>
-                    <input type="text" name="phone" />
-                    <label>Message</label>
-                    <textarea name="message"></textarea>
-
-                    <input type="submit" name="send" value="Send Message" />
-                </form>
-                <script>
-                    var form = document.forms["contact"];
-                    form.addEventListener('submit', contact_submit, false);
-
-                    function contact_submit(e) {
-                        // Stop Form From Submitting
-                        e.preventDefault();
-
-                        // Set Initial Variables
-                        var target = e.target || e.srcElement;
-                        var to = 'someone@example.com';
-                        var uri = 'mailto:' + to;
-                        var body = '';
-
-                        // Set Form Values to Variables
-                        var name = target.elements['name'].value;
-                        var subject = target.elements['subject'].value;
-                        var phone = target.elements['phone'].value;
-                        var message = target.elements['message'].value;
-
-                        // Build Body / Message with all Input Fields
-                        body += message + "\r\n\r\n";
-                        body += "Name: " + name + "\r\n";
-                        body += "Phone Number: " + phone + "\r\n";
-
-                        // Build final Mailto URI
-                        uri += '?subject=' + encodeURIComponent(subject);
-                        uri += '&body=' + encodeURIComponent(body);
-
-                        // Open Mailto in New Window / Tab
-                        window.open(uri, '_blank');
-                    }
-                </script>
-            </div>
         </section>
         <footer id="footer">
             <div class="container">
                 <h1>Merci d'avoir visiter mon site !</h1>
                 <div class="social-links">
-                    <a href="https://www.twitter.com/jayvues/" class="twitter"><i class="bx bxl-twitter"></i></a>
-                    <a href="https://www.facebook.com/jayvues/" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <a href="https://www.instagram.com/jayvues/" class="instagram"><i class="bx bxl-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/jayvues/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://www.twitter.com/jayvues/" target="popup" onclick="window.open('https://www.twitter.com/jayvues/','popup','width=600,height=600'); return false;" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="https://www.facebook.com/jayvues/" target="popup" onclick="window.open('https://www.facebook.com/jayvues/','popup','width=600,height=600'); return false;" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://www.instagram.com/jayvues/" target="popup" onclick="window.open('https://www.instagram.com/jayvues/','popup','width=600,height=600'); return false;" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/jayvues/" target="popup" onclick="window.open('https://www.linkedin.com/jayvues/','popup','width=600,height=600'); return false;" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                 </div>
                 <div class="copyright">
                     &copy;
