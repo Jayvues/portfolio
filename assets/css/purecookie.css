@@ -39,11 +39,10 @@
 	font-size: 14px;
 	font-weight: bold;
 	margin-top: 14px;
-	background: #000000;
+	background: #1569C7;
 	box-sizing: border-box; 
 	padding: 15px 24px;
-	text-align: center;
-	transition: background 0.3s;
+		transition: background 0.3s;
 }
 .cookieConsentContainer .cookieButton a:hover { 
 	cursor: pointer;
