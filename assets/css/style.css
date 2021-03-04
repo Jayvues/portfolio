@@ -45,6 +45,36 @@ p {
 }
 
 
+/* Project Counter */
+
+.counter {
+    width: 100px;
+    font: 900 70px;
+    overflow: hidden;
+}
+
+.numbers {
+    width: auto;
+    display: flex;
+    animation: countNumber 4s infinite alternate;
+    animation-timing-function: steps(10);
+}
+
+.numbers div {
+    text-align: center;
+    flex: 0 0 100px;
+}
+
+@keyframes countNumber {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -1000px;
+    }
+}
+
+View Compiled
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -97,7 +127,7 @@ p {
     position: fixed;
     top: calc(50% - 30px);
     left: calc(50% - 30px);
-    border: 6px solid #0563bb;
+    border: 6px solid #c57308;
     border-top-color: #fff;
     border-bottom-color: #fff;
     border-radius: 50%;
@@ -404,7 +434,7 @@ video {
 }
 
 #hero p span {
-    color: #0f52ba;
+    color: #f5dd04;
     letter-spacing: 1px;
 }
 
